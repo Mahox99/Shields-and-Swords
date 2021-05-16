@@ -18,7 +18,7 @@ public class WeaponInfo : MonoBehaviour
     public GameObject PlayerSword;
     public GameObject PlayerShield;
 
-    //[SerializeField] private Animator myAnimation;
+    [SerializeField] private Animator presAnim;
 
     public GameObject[] Swords;
     public GameObject[] Shields;
@@ -34,8 +34,7 @@ public class WeaponInfo : MonoBehaviour
         {
             infoDisplay.GetComponent<UnityEngine.UI.Text>().text = "Def. =" + defensePoints + " " + addInfo;
         }
-        
-        //TimeDisplay.GetComponent<UnityEngine.UI.Text>().text = "Time: " + time;
+
     }
     void Update()
     {
@@ -49,7 +48,7 @@ public class WeaponInfo : MonoBehaviour
             ClearSwords();
             PlayerSword = Swords[id];
             PlayerSword.SetActive(true);
-            //myAnimation.SetBool("Attack", true);
+            
         }
 
         if (isShield == true)
@@ -57,8 +56,9 @@ public class WeaponInfo : MonoBehaviour
             ClearShields();
             PlayerShield = Shields[id];
             PlayerShield.SetActive(true);
-            //myAnimation.SetBool("Defense", true);
+            
         }
+        presAnim.SetBool("Presentation", true);
     }
     public void TakeOff()
     {

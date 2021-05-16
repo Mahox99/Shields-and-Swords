@@ -6,4 +6,10 @@ public class PlayerControl : MonoBehaviour
 {
     public static GameObject playerWeapon;
     public static GameObject playerShield;
+
+    private void Update()
+    {
+        
+    }
+
 }
