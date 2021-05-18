@@ -22,7 +22,6 @@ public class WeaponControler : MonoBehaviour
             {
                 itemAnim.SetTrigger("Discharge");
                 Debug.Log("click up LPM");
-            }
-        
+            }  
     }
 }
