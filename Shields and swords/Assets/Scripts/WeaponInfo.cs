@@ -11,6 +11,7 @@ public class WeaponInfo : MonoBehaviour
     public int damagePoints;
     public int defensePoints;
     public string addInfo = "";
+    public AudioSource sound;
 
     public bool isSword = false;
     public bool isShield = false;
@@ -50,6 +51,7 @@ public class WeaponInfo : MonoBehaviour
     {
         WMg2 item = GameObject.Find("WeaponMenager").GetComponent<WMg2>();
         PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
+        sound.Play();
         if (isSword == true)
         {       
             item.ClearSwords();
