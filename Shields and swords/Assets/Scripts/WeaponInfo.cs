@@ -75,18 +75,26 @@ public class WeaponInfo : MonoBehaviour
     {
         WMg2 item = GameObject.Find("WeaponMenager").GetComponent<WMg2>();
         PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
-        player.notificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
-        player.notificationAnim.SetTrigger("Show");
         if (isSword == true)
         {
-            player.SetSwordEmpty();  
-            player.playerSword.SetActive(false);
+            if(player.playerSword == item.swords[id])
+            {
+                player.SetSwordEmpty();
+                player.playerSword.SetActive(false);
+                player.notificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
+                player.notificationAnim.SetTrigger("Show");
+            }
             
         }
         if (isShield == true)
         {
-            player.SetShieldEmpty();
-            player.playerShield.SetActive(false);
+            if (player.playerShield == item.shields[id])
+            {
+                player.SetShieldEmpty();
+                player.playerShield.SetActive(false);
+                player.notificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
+                player.notificationAnim.SetTrigger("Show");
+            }
         }     
     }
 }
