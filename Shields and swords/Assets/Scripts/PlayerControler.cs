@@ -32,7 +32,6 @@ public class PlayerControler : MonoBehaviour
         shTitleDisplay.GetComponent<UnityEngine.UI.Text>().text = "Empty";
         shIconDisplay.sprite = emptyIcon;
     }
-
 }
  
 

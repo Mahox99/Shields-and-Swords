@@ -22,7 +22,7 @@ public class WeaponInfo : MonoBehaviour
 
     [Header("Images")]
     public Sprite icon;
-    public Image EqIcon;
+    public Image eqIcon;
 
     [Header("Animations")]
     [SerializeField] private Animator itemAnim;
@@ -32,20 +32,18 @@ public class WeaponInfo : MonoBehaviour
         titleDisplay.GetComponent<UnityEngine.UI.Text>().text = title;
         if (isSword == true)
         {
-            EqIcon.sprite = icon;
+            eqIcon.sprite = icon;
             aboutDisplay.GetComponent<UnityEngine.UI.Text>().text = "Damage: " + damagePoints + "\n" + addInfo;
-            Debug.Log("zdefiniowano miecz " + id);
         }
         if (isShield == true)
         {
-            EqIcon.sprite =  icon;
+            eqIcon.sprite =  icon;
             aboutDisplay.GetComponent<UnityEngine.UI.Text>().text = "Defense: " + defensePoints + "\n" + addInfo;
-            Debug.Log("zdefiniowano tarcze " + id);
         }  
     }
     public void Equip()
     {
-        WMg2 item = GameObject.Find("WeaponMenager").GetComponent<WMg2>();
+        WeaponMenager item = GameObject.Find("WeaponMenager").GetComponent<WeaponMenager>();
         PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
         sound.Play();
         if (isSword == true)
@@ -71,7 +69,7 @@ public class WeaponInfo : MonoBehaviour
     }
     public void TakeOff()
     {
-        WMg2 item = GameObject.Find("WeaponMenager").GetComponent<WMg2>();
+        WeaponMenager item = GameObject.Find("WeaponMenager").GetComponent<WeaponMenager>();
         PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
         if (isSword == true)
         {

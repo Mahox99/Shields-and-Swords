@@ -8,16 +8,14 @@ public class PickItem : MonoBehaviour
     public GameObject eqObject;
     public string itemTitle;
     public AudioSource sfx;
-    bool PlayerIn;
-    
+    bool playerIn; 
 
     void OnTriggerEnter(Collider other)
     {
         PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
         if (other.CompareTag("Player"))
         {
-            PlayerIn = true;
-            Debug.Log("Jestem w srodku!");
+            playerIn = true;
             player.staticNotificationDisplay.GetComponent<UnityEngine.UI.Text>().text = "Press f to pick up " + itemTitle;
             player.staticNotificationDisplay.SetActive(true);
             
@@ -28,14 +26,13 @@ public class PickItem : MonoBehaviour
         PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Jestem na zewnatrz!");
-            PlayerIn = false;
+            playerIn = false;
             player.staticNotificationDisplay.SetActive(false);
         }
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Action")&&PlayerIn==true)
+        if (Input.GetButtonDown("Action")&&playerIn==true)
         {
             PlayerControler player = GameObject.Find("Player").GetComponent<PlayerControler>();
             sfx.Play();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WMg2 : MonoBehaviour
+public class WeaponMenager : MonoBehaviour
 {
     public GameObject[] swords;
     public GameObject[] shields;
@@ -22,5 +22,4 @@ public class WMg2 : MonoBehaviour
             shields[i].SetActive(false);
         }
     }
-
 }
