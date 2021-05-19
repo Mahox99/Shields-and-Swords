@@ -16,7 +16,8 @@ public class PlayerControler : MonoBehaviour
     public Image shIconDisplay;
 
     [Header("Other")]
-    public GameObject notificationDisplay;
+    public GameObject dynamicNotificationDisplay;
+    public GameObject staticNotificationDisplay;
     [SerializeField] public Animator notificationAnim;
 
     public Sprite emptyIcon;

@@ -19,8 +19,6 @@ public class WeaponInfo : MonoBehaviour
     [Header("Displays")]
     public GameObject titleDisplay;
     public GameObject aboutDisplay;
-    //public GameObject notificationDisplay;
-
 
     [Header("Images")]
     public Sprite icon;
@@ -28,7 +26,6 @@ public class WeaponInfo : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] private Animator itemAnim;
-
 
     void Start()
     {
@@ -46,7 +43,6 @@ public class WeaponInfo : MonoBehaviour
             Debug.Log("zdefiniowano tarcze " + id);
         }  
     }
-
     public void Equip()
     {
         WMg2 item = GameObject.Find("WeaponMenager").GetComponent<WMg2>();
@@ -70,7 +66,7 @@ public class WeaponInfo : MonoBehaviour
             player.shTitleDisplay.GetComponent<UnityEngine.UI.Text>().text = title;
         }
         itemAnim.SetTrigger("Presentation");
-        player.notificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready equipped";
+        player.dynamicNotificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready equipped";
         player.notificationAnim.SetTrigger("Show");
     }
     public void TakeOff()
@@ -83,10 +79,9 @@ public class WeaponInfo : MonoBehaviour
             {
                 player.SetSwordEmpty();
                 player.playerSword.SetActive(false);
-                player.notificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
+                player.dynamicNotificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
                 player.notificationAnim.SetTrigger("Show");
-            }
-            
+            }      
         }
         if (isShield == true)
         {
@@ -94,7 +89,7 @@ public class WeaponInfo : MonoBehaviour
             {
                 player.SetShieldEmpty();
                 player.playerShield.SetActive(false);
-                player.notificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
+                player.dynamicNotificationDisplay.GetComponent<UnityEngine.UI.Text>().text = title + " was allready taken off";
                 player.notificationAnim.SetTrigger("Show");
             }
         }     

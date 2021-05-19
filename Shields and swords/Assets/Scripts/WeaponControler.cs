@@ -5,7 +5,6 @@ using UnityEngine;
 public class WeaponControler : MonoBehaviour
 {
     [SerializeField] private Animator itemAnim;
-
     void Update()
     {
             if (Input.GetMouseButtonDown(0))
